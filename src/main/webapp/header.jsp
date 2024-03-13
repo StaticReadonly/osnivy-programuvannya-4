@@ -1,5 +1,3 @@
 <header>
-    <a href="./">Count</a>
-    <a href="./faculty">Faculties</a>
-    <a href="./student">Students</a>
+    <div>Header</div>
 </header>

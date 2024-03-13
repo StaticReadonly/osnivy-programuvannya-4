@@ -13,7 +13,7 @@ public class IndexServlet extends HttpServlet {
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        request.getRequestDispatcher("main.jsp").forward(request, response);
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -22,17 +22,23 @@ public class IndexServlet extends HttpServlet {
 
         switch (action){
             case "all_u":{
-                request.setAttribute("res", MainService.countAllStudents());
+                var res = MainService.countAllStudents();
+                request.setAttribute("res", res);
+                break;
             }
             case "most":{
-                request.setAttribute("res", MainService.findFacultyWithMostStudents());
+                var res = MainService.findFacultyWithMostStudents();
+                request.setAttribute("res", res);
+                break;
             }
             case "all_g":{
-                request.setAttribute("res", MainService.findStudentsWithGrade());
+                var res = MainService.findStudentsWithGrade();
+                request.setAttribute("res", res);
+                break;
             }
         }
 
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        request.getRequestDispatcher("main.jsp").forward(request, response);
     }
 
     public void destroy() {

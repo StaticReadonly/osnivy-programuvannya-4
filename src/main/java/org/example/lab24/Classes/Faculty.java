@@ -15,6 +15,11 @@ public class Faculty {
     private String _name;
     private ArrayList<Student> _students = new ArrayList<>();
 
+    public Faculty(String name, ArrayList<Student> students){
+        this._name = name;
+        this._students = students;
+    }
+
     public void addStudent(Student s){
         _students.add(s);
     }
@@ -33,7 +38,7 @@ public class Faculty {
         ArrayList<Student> res = new ArrayList<>();
 
         for(Student s : _students){
-            int g = s.getGrade();
+            int g = s.get_grade();
             if (g >= 95 && g <= 100){
                 res.add(s);
             }

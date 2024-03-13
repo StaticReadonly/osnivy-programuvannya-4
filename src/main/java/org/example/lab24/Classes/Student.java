@@ -25,16 +25,23 @@ public class Student {
         this._number = _number;
     }
 
-    public int getGrade() {
-        return grade;
+    public int get_grade() {
+        return _grade;
     }
 
-    public void setGrade(int grade) {
-        this.grade = grade;
+    public void set_grade(int _grade) {
+        this._grade = _grade;
     }
 
     private String _name;
     private String _surname;
     private int _number;
-    private int grade;
+    private int _grade;
+
+    public Student(String name, String surname, int number, int grade){
+        this._name = name;
+        this._surname = surname;
+        this._number = number;
+        this._grade = grade;
+    }
 }

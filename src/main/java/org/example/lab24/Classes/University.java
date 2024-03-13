@@ -5,15 +5,20 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 public class University {
-    public String getName() {
-        return name;
+    public String get_name() {
+        return _name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void set_name(String _name) {
+        this._name = _name;
     }
 
-    private String name = "University1";
+    public University(String name, HashMap<String, Faculty> faculties){
+        this._name = name;
+        this._faculties = faculties;
+    }
+
+    private String _name = "University1";
 
     private HashMap<String, Faculty> _faculties = new HashMap<>();
 
@@ -30,7 +35,7 @@ public class University {
         int res = 0;
         Iterator itr = _faculties.keySet().iterator();
         while(itr.hasNext()){
-            res += ((Faculty)itr.next()).countAllStudents();
+            res += _faculties.get(itr.next()).countAllStudents();
         }
         return res;
     }
